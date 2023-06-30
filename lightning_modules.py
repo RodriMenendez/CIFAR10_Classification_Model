@@ -28,7 +28,7 @@ class CIFARModule(L.LightningModule):
         acc = (preds == labels).float().mean()
 
         # log accuracy and loss
-        self.log("train_acc", acc, on_step=False, on_epoch=True)
+        self.log("train_acc", acc)
         self.log("train_loss", loss)
 
         return loss
