@@ -30,7 +30,7 @@ wandb_logger = WandbLogger(project='CIFAR10-Resnet18-Classification', config=wan
 autoencoder = lightning_modules.CIFARModule(clf_model)
 
 # train
-trainer = L.pytorch.Trainer(accelerator='auto', max_epochs=4, trainer=wandb_logger)
+trainer = L.pytorch.Trainer(accelerator='auto', max_epochs=4, logger=wandb_logger)
 trainer.fit(model=autoencoder, train_dataloaders=trainloader)
 
 # test
