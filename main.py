@@ -11,8 +11,7 @@ import models
 import lightning_modules
 
 # get the data
-data = get_data.CIFAR10()
-train_data, trainloader, test_data, testloader = data.download_data()
+train_data, trainloader, test_data, testloader = get_data.get_CIFAR10()
 
 # get models
 resnet_model = models.ResNet18()
