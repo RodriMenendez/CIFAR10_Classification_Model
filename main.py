@@ -11,6 +11,8 @@ import get_data
 import models
 import lightning_modules
 
+import time
+
 # get the data
 train_data, trainloader, test_data, testloader = get_data.get_CIFAR10()
 
@@ -35,4 +37,9 @@ trainer.fit(model=autoencoder, train_dataloaders=trainloader)
 
 # test
 test_result = trainer.test(autoencoder, dataloaders=testloader, verbose=False)
-print(test_result[0])
+
+# save model
+timestr = time.strftime("%Y%m%d-%H%M%S")
+
+path = './models/clf_model' + timestr
+torch.save(clf_model.state_dict(), path)
