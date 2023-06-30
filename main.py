@@ -41,5 +41,5 @@ test_result = trainer.test(autoencoder, dataloaders=testloader, verbose=False)
 # save model
 timestr = time.strftime("%Y%m%d-%H%M%S")
 
-path = './models/clf_model' + timestr
+path = './clf_model' + timestr
 torch.save(clf_model.state_dict(), path)
