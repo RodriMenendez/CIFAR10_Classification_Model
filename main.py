@@ -18,7 +18,7 @@ resnet_model = models.ResNet18()
 clf_model = models.Classification(resnet_model)
 
 # lightning module
-autoencoder = lightning_modules.CIFAR1Module(clf_model)
+autoencoder = lightning_modules.CIFARModule(clf_model)
 
 # train
 trainer = L.pytorch.Trainer(accelerator='auto', max_epochs=4)
